@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>iframe-buster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <script type="text/javascript">
+    var prevent_bust = 0  
+    window.onbeforeunload = function() { prevent_bust++ }  
+    setInterval(function() {  
+      if (prevent_bust > 0) {  
+        prevent_bust -= 2  
+        window.top.location = 'https://iframe-checker.vercel.app/iframe-checker.html'  
+      }  
+    }, 1)  
+</script>
+    </script>
+  </head>
+  <body>
+    <iframe
+      src="https://iframe-checker.vercel.app/iframe-checker.html"
+      title="description"
+    ></iframe>
+  </body>
+</html>
